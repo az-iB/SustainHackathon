@@ -1,0 +1,20 @@
+{% extends "simple.html" %}
+{% block title %}A Landing Page{% endblock %}
+{% block content %}
+{% if user.is_anonymous %}
+    <p>Obviously you love this site, why don't you log in and stay a while?</p>
+        <a data-role="button" href="{% url 'login' %}">Log In</a>
+{% else %}
+    <p>Contratulations on logging in, we love visitors, but we currently have nothing to show you!</p>
+    <form action="/search/" method="get">
+        <div data-role="fieldcontain">
+            <label for="textarea">What's in your mind?</label>
+            <input type="search" name="textarea" id="textarea" placeholder="Sunnyvale farmers market"></input>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="textarea"> </label>
+            <input type="submit" id="submitButton" value="Done">
+        </div>
+    </form>
+{% endif %}
+{% endblock %}
