@@ -1,11 +1,12 @@
 {% extends "simple.html" %}
 {% block title %}Done{% endblock %}
 {% block content %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/custom.css">
 {% if user.is_anonymous %}
 	<p>Please login first.</p>
         <a data-role="button" href="{% url 'login' %}">Log In</a>
 {% else %}
-<div data-role="fieldcontain" ><img id="BrandPic" src="/static/img/logo.png" width="80%" class="center" />
+<div data-role="fieldcontain" ><img id="BrandPic" src="/static/img/checkmark.png" width="80%" class="center" />
 	<p>Thank you. We will inform you by phone call.</p>
 </div>
 <div data-role="fieldcontain"> 
