@@ -10,7 +10,7 @@
             {% for choice in choice_data %}
             <li>
             <a href="../details">
-                <img src="{{ STATIC_URL }}img/ICON1.png">
+                <img src="{{ STATIC_URL }}img/ICON{{ forloop.counter }}.png">
                 <h2>{{ choice.distance }} miles away</h2>
                 <p>{{ choice.address }}</p>
             </a>

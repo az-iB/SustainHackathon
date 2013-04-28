@@ -62,7 +62,7 @@ def multikeysort(items, columns):
 ############## core function ###############
 
 # return: distance, address (rating?)
-def searchDistanceWithMining(request):
+def searchDistanceWithMining(request, dateTime):
 
     # connecting to mongo db
     connection = MongoClient('mongodb://10.34.18.181:27017')
@@ -76,7 +76,7 @@ def searchDistanceWithMining(request):
         #stations[entry['stationID']] = 0
 
     # XXX changeMe
-    targetTime = '12:30'
+    targetTime = dateTime
     targetStart = yieldRawMinute(targetTime, -10)
     targetEnd   = yieldRawMinute(targetTime, +10)
 
@@ -93,19 +93,20 @@ def searchDistanceWithMining(request):
         start = yieldRawMinute(startHMS)
         end = yieldRawMinute(endHMS)
 
-        print startHMS, '->', endHMS, '  ', start, '->', end,
+        #print startHMS, '->', endHMS, '  ', start, '->', end,
         
         # core comparison logic
         # case 1: start < targetStart < end
         # case 2: start < targetEnd < end
         if start < targetStart and targetStart < end:
-            print '@@', stationID_
+            #print '@@', stationID_
             stations[stationID_] += 1
         elif start < targetEnd and targetEnd < end:
-            print '@@', stationID_
+            #print '@@', stationID_
             stations[stationID_] += 1
         else:
-            print
+            d = None
+            #print
 
         # offset
         start = 0
@@ -120,8 +121,8 @@ def searchDistanceWithMining(request):
     print
     print 'stationID -> HitCount based on query'
     print
-    for ha in stations:
-        print ha
+    #for ha in stations:
+        #print ha
 
     from getPublicStation import getPublicStations
 
@@ -187,7 +188,7 @@ def searchDistanceWithMining(request):
             #print float(station.Port[0].Geo.Lat), float(station.Port[0].Geo.Long)
             # we only return the first ten results
             # this should be enough
-            if i < 10:
+            if i < 6:
                 distanceRound = round(station.distance, 2)
                 list_choices.append(Choice(station.Address, distanceRound))
                 print

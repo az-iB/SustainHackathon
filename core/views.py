@@ -19,10 +19,19 @@ def search( request ):
     )
 
 def choices( request ):
-    if 'textarea' in request.GET and request.GET['textarea']:
-        print request.GET['textarea']
 
-    choices = searchDistanceWithMining(request)
+    print '>>>>>>>>>'
+    if 'location' in request.GET and request.GET['location']:
+        location = request.GET['location']
+        print 'User input: Location', location
+
+    if 'datetime-3' in request.GET and request.GET['datetime-3']:
+        dateTime = request.GET['datetime-3'][11:]
+        print 'User input: datetime', dateTime
+    else:
+        dateTime = '02:00' # XXX
+
+    choices = searchDistanceWithMining(request, dateTime)
 
     return render_to_response(
     'choices.html',
@@ -51,8 +60,10 @@ def notify( request ):
     )
 
 def donetext( request ):
-    if 'textarea' in request.GET and request.GET['textarea']:
-        print request.GET['textarea']
+
+    # XXX register with our server for a text back when
+    # the slot is occupied 15min before arriving
+    # and recommend a new one
 
     return render_to_response(
     'done-text.html',

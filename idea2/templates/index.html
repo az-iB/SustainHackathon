@@ -5,11 +5,24 @@
     <p>Obviously you love this site, why don't you log in and stay a while?</p>
         <a data-role="button" href="{% url 'login' %}">Log In</a>
 {% else %}
-    <p>Please tell us when and where do you want to park your EV</p>
-    <form action="/choices/" method="GET">
+    <p>Please tell us where and when do you want to charge your EV</p>
+    <script>
+        function validateForm()
+        {
+            var x=document.forms["searchForm"]["location"].value;
+            if (x==null || x=="")
+            {
+                alert("Location must be filled out");
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+    <form name="searchForm" action="/choices/" method="GET" onsubmit="return validateForm();">
         <div data-role="fieldcontain">
-            <label for="textarea">Location</label>
-            <input type="search" name="textarea" id="textarea" placeholder="e.g. Sunnyvale farmers market"></input>
+            <label for="location">Location</label>
+            <input type="search" name="location" id="location" placeholder="e.g. Sunnyvale farmers market"></input>
 	</div>
 	<div data-role="fieldcontain">
 	    <label for="datetime-3">Date and Time</label>
@@ -18,7 +31,7 @@
 	</div>
 	
         <div data-role="fieldcontain">
-            <label for="textarea"> </label>
+            <label for="location"> </label>
             <input type="submit" id="submitButton" value="Search">
         </div>
     </form>
