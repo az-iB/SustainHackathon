@@ -26,8 +26,17 @@ urlpatterns = patterns('',
 
     url(r'^search/','core.views.search'),
 
-    url(r'^details/','core.views.details'),
+    url(r'^choices/','core.views.choices'),
     
+    url(r'^details/','core.views.details'),
+
+    url(r'^notify/','core.views.notify'),  
+
+    url(r'^done-text/','core.views.done-text'),  
+    
+    url(r'^done-call/','core.views.done-call'),  
+    
+    url(r'^done-none/','core.views.done-none'),  
     #(r'^accounts/', include('registration.urls')),
 
     # url(r'^idea2/', include('idea2.foo.urls')),

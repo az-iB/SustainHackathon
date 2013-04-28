@@ -38,3 +38,43 @@ def details( request ):
     {},
     context_instance = RC( request, {} ),
     )
+
+def notify( request ):
+    if 'textarea' in request.GET and request.GET['textarea']:
+        print request.GET['textarea']
+
+    return render_to_response(
+    'notify.html',
+    {},
+    context_instance = RC( request, {} ),
+    )
+
+def donetext( request ):
+    if 'textarea' in request.GET and request.GET['textarea']:
+        print request.GET['textarea']
+
+    return render_to_response(
+    'done-text.html',
+    {},
+    context_instance = RC( request, {} ),
+    )
+
+def donecall( request ):
+    if 'textarea' in request.GET and request.GET['textarea']:
+        print request.GET['textarea']
+
+    return render_to_response(
+    'done-call.html',
+    {},
+    context_instance = RC( request, {} ),
+    )
+
+def donenone( request ):
+    if 'textarea' in request.GET and request.GET['textarea']:
+        print request.GET['textarea']
+
+    return render_to_response(
+    'done-none.html',
+    {},
+    context_instance = RC( request, {} ),
+    )

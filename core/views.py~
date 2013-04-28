@@ -34,7 +34,47 @@ def details( request ):
         print request.GET['textarea']
 
     return render_to_response(
-    'index.html',
+    'details.html',
+    {},
+    context_instance = RC( request, {} ),
+    )
+
+def notify( request ):
+    if 'textarea' in request.GET and request.GET['textarea']:
+        print request.GET['textarea']
+
+    return render_to_response(
+    'notify.html',
+    {},
+    context_instance = RC( request, {} ),
+    )
+
+def done-text( request ):
+    if 'textarea' in request.GET and request.GET['textarea']:
+        print request.GET['textarea']
+
+    return render_to_response(
+    'done-text.html',
+    {},
+    context_instance = RC( request, {} ),
+    )
+
+def done-call( request ):
+    if 'textarea' in request.GET and request.GET['textarea']:
+        print request.GET['textarea']
+
+    return render_to_response(
+    'done-call.html',
+    {},
+    context_instance = RC( request, {} ),
+    )
+
+def done-none( request ):
+    if 'textarea' in request.GET and request.GET['textarea']:
+        print request.GET['textarea']
+
+    return render_to_response(
+    'done-none.html',
     {},
     context_instance = RC( request, {} ),
     )

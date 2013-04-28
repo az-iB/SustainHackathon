@@ -1,0 +1,20 @@
+{% extends "simple.html" %}
+{% block title %}Notification{% endblock %}
+{% block content %}
+{% if user.is_anonymous %}
+	<p>Please login first.</p>
+        <a data-role="button" href="{% url 'login' %}">Log In</a>
+{% else %}
+    <p>How would you like us to inform you in case when the charge station becomes unavailable?</p>
+    <form action="/done/" method="GET">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="../done-text">Text</a></li>
+			<li><a href="../done-call">Call</a></li>
+			<li><a href="../done-none" class="ui-btn-active ui-state-persist" >None</a></li>
+		</ul>
+	</div><!-- /navbar -->
+   
+    </form>
+{% endif %}
+{% endblock %}

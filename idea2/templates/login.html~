@@ -7,9 +7,9 @@
 
 <form action="{% url 'login' %}" data-ajax="false" method="POST">
     {% include "formfields.html" %} 
-    <div data-role="controlgroup" data-type="horizontal" style="width:100%">
-    <input type="submit" value="{% trans 'Log In'%}" />
-    <input type="button" value="{% trans 'Facebook' %}" />
+    <div data-role="controlgroup">
+    <input type="submit" value="{% trans 'Log In'%}"/>
+    <input type="button" value="{% trans 'Facebook' %}" data-theme="b"/>
     </div>
     <input type="hidden" name="next" value="{{ next }}" />
 </form>

@@ -29,6 +29,14 @@ urlpatterns = patterns('',
     url(r'^choices/','core.views.choices'),
     
     url(r'^details/','core.views.details'),
+
+    url(r'^notify/','core.views.notify'),  
+
+    url(r'^donetext','core.views.donetext'),  
+    
+    url(r'^donecall','core.views.donecall'),  
+    
+    url(r'^donenone','core.views.donenone'),  
     #(r'^accounts/', include('registration.urls')),
 
     # url(r'^idea2/', include('idea2.foo.urls')),
