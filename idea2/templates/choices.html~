@@ -1,0 +1,24 @@
+{% extends "simple.html" %}
+{% block title %}Choices{% endblock %}
+{% block content %}
+{% if user.is_anonymous %}
+    <p>Please login first</p>
+        <a data-role="button" href="{% url 'login' %}">Log In</a>
+{% else %}
+    <p>Choices you have:</p>
+		<ul data-role="listview" data-inset="true">
+    		<li><a href="../details">
+				<img src="{{ STATIC_URL }}img/sinatop.jpg" >
+        		<h2>Charge station 1</h2>
+        		<p>Sunnyvale, CA</p></a>
+			</li>
+		</ul>
+	
+    <form action="/search/" method="GET">
+        <div data-role="fieldcontain">
+            <label for="textarea"> </label>
+            <input type="submit" id="submitButton" value="Back">
+        </div>
+    </form>
+{% endif %}
+{% endblock %}

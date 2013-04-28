@@ -1,0 +1,20 @@
+{% extends "simple.html" %}
+{% block title %}Details{% endblock %}
+{% block content %}
+{% if user.is_anonymous %}
+    <p>Please login first</p>
+        <a data-role="button" href="{% url 'login' %}">Log In</a>
+{% else %}
+    <form action="/reserve/" method="GET">
+        <div data-role="fieldcontain">
+            <label for="textarea">Charge station one</label>
+	    <p>This station charges $1 per hour. The likely hood of availability is 80%</p>
+	</div>
+	
+        <div data-role="fieldcontain">
+            <label for="textarea"> </label>
+            <input type="submit" id="submitButton" value="Select">
+        </div>
+    </form>
+{% endif %}
+{% endblock %}

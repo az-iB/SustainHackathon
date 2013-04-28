@@ -6,7 +6,7 @@
         <a data-role="button" href="{% url 'login' %}">Log In</a>
 {% else %}
     <p>Please tell us when and where do you want to park your EV</p>
-    <form action="/choices/" method="GET">
+    <form action="/search/" method="GET">
         <div data-role="fieldcontain">
             <label for="textarea">Location</label>
             <input type="search" name="textarea" id="textarea" placeholder="e.g. Sunnyvale farmers market"></input>

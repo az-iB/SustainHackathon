@@ -26,9 +26,8 @@ urlpatterns = patterns('',
 
     url(r'^search/','core.views.search'),
 
-    url(r'^choices/','core.views.choices'),
-    
     url(r'^details/','core.views.details'),
+    
     #(r'^accounts/', include('registration.urls')),
 
     # url(r'^idea2/', include('idea2.foo.urls')),
