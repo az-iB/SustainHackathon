@@ -163,4 +163,4 @@ LOGGING = {
     }
 }
 
-
+DEBUG_LIST=[{'id': 1, 'name': 'Beatles Blog', 'tagline': 'All the latest Beatles news.'}]

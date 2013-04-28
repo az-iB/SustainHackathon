@@ -49,7 +49,7 @@ def notify( request ):
     context_instance = RC( request, {} ),
     )
 
-def donetext( request ):
+def done-text( request ):
     if 'textarea' in request.GET and request.GET['textarea']:
         print request.GET['textarea']
 
@@ -59,7 +59,7 @@ def donetext( request ):
     context_instance = RC( request, {} ),
     )
 
-def donecall( request ):
+def done-call( request ):
     if 'textarea' in request.GET and request.GET['textarea']:
         print request.GET['textarea']
 
@@ -69,7 +69,7 @@ def donecall( request ):
     context_instance = RC( request, {} ),
     )
 
-def donenone( request ):
+def done-none( request ):
     if 'textarea' in request.GET and request.GET['textarea']:
         print request.GET['textarea']
 

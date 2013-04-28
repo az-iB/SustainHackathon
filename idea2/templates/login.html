@@ -1,10 +1,16 @@
 {% extends 'simple.html' %}
-{% load i18n %}
+{% load i18n %} 
 {% block title %}{% trans 'Log In' %}{% endblock %}
 {% block content %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/custom.css">
+<div id="BrandPicDiv" ><img id="BrandPic" src="/static/img/logo.png" width="80%" class="center" /></div>
+
 <form action="{% url 'login' %}" data-ajax="false" method="POST">
-    {% include "formfields.html" %}
-    <input type="submit" value="{% trans 'Log In' %}" />
+    {% include "formfields.html" %} 
+    <div data-role="controlgroup">
+    <input type="submit" value="{% trans 'Log In'%}"/>
+    <input type="button" value="{% trans 'Facebook Login' %}" data-theme="b"/>
+    </div>
     <input type="hidden" name="next" value="{{ next }}" />
 </form>
 {% endblock %}

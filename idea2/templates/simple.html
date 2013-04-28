@@ -1,6 +1,7 @@
 {% extends 'v1_0_0b1.html' %}
 {% load i18n %}
-
+{% block sitescript %}
+{% endblock %}
 {% block jqmheader %}
     <div data-role="header">
         <h1 class="display-title">
@@ -11,7 +12,7 @@
             <a href="{% url 'logout' %}" rel="external" class="ui-btn-right logout-button" data-icon="minus" title="Log Out of Your Account for Security"><span class="logout-wide">Logout: </span>{{ user.username }}</a>
         {% endif %}
         {% include "messages.html" %}
-    </div>
+	</div>
 {% endblock jqmheader %}
 
 {% block jqmcontent %}
