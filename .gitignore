@@ -1,2 +1,4 @@
-*.py[cod]
+*.py[cod~]
+*.html~
 *.swp
+*.db

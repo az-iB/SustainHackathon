@@ -7,11 +7,15 @@
 {% else %}
     <p>Choices you have:</p>
 		<ul data-role="listview" data-inset="true">
-    		    <li><a href="../details">
-			<img src="{{ STATIC_URL }}img/ICON1.png">
-        		<h2>Charge station 1</h2>
-        		<p>Sunnyvale, CA</p></a>
-		    </li>
+            {% for choice in choice_data %}
+            <li>
+            <a href="../details">
+                <img src="{{ STATIC_URL }}img/ICON1.png">
+                <h2>{{ choice.distance }} miles away</h2>
+                <p>{{ choice.address }}</p>
+            </a>
+            </li>
+            {% endfor %}
 		</ul>
 	
     <form action="/search/" method="GET">

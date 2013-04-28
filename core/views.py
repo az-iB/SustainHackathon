@@ -1,6 +1,7 @@
 # Create your views here.
 from django.shortcuts import render_to_response
 from django.template import RequestContext as RC
+from search import searchDistanceWithMining
 
 def home( request ):
     return render_to_response(
@@ -15,17 +16,17 @@ def search( request ):
 
     return render_to_response(
     'index.html',
-    {},
-    context_instance = RC( request, {} ),
     )
 
 def choices( request ):
     if 'textarea' in request.GET and request.GET['textarea']:
         print request.GET['textarea']
 
+    choices = searchDistanceWithMining(request)
+
     return render_to_response(
     'choices.html',
-    {},
+    {'choice_data': choices },
     context_instance = RC( request, {} ),
     )
 
